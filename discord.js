@@ -11,7 +11,7 @@ exports.discord = async (pubSubEvent, context) => {
 
     if(process.env.airtableKey && process.env.airtableBase) {
         const base = new airtable({apiKey: process.env.airtableKey}).base(process.env.airtableBase);
-        await base('Discord').create({ Date: new Date(), title, subreddit, author, link: `www.reddit.com${permalink}` });
+        await base(process.env.airtableTableName || 'Discord').create({ Date: new Date(), title, subreddit, author, link: `www.reddit.com${permalink}` });
     }
 
     const packet = { username: process.env.discordUsername, content: url };

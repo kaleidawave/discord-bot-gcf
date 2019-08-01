@@ -40,3 +40,5 @@ The function uses environment variable to configure the function
 `airtableKey` your airtable api key (obtained in the account page)
 
 `airtableBase` your airtable base key (not sure how you obtain )
+
+`airtableTable` the name of the airtable table (defaults to 'Discord')
