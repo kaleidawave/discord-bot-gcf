@@ -1,19 +1,21 @@
 {
-  "name": "test",
-  "version": "1.0.0",
-  "description": "",
-  "main": "discord.js",
-  "scripts": {
-    "deploy": "gcloud functions deploy discord --runtime nodejs8 --trigger-topic discord",
-    "start": "node discord.js"
-  },
-  "author": "kaleidawave",
-  "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "airtable": "^0.7.0",
-    "dotenv": "^8.0.0",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4"
-  }
+    "name": "test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "deploy-bot": "gcloud functions deploy discord --runtime nodejs8 --trigger-topic discord",
+        "deploy-monitor": "gcloud functions deploy discordUI --runtime nodejs8 --trigger-http"
+    },
+    "author": "kaleidawave",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "airtable": "^0.7.0",
+        "dotenv": "^8.0.0",
+        "express": "^4.17.1",
+        "moment": "^2.24.0",
+        "request": "^2.88.0",
+        "request-promise": "^4.2.4"
+    }
 }
