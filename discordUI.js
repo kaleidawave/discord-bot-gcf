@@ -13,7 +13,7 @@ exports.discordUI = async (req, res) => {
         if (username === process.env.monitoringUsername && password === process.env.monitoringPassword) {
             const base = new airtable({apiKey: process.env.airtableKey}).base(process.env.airtableBase);
             const table = await base(process.env.airtableTableName || 'Discord').select({
-                maxRecords: 3,
+                maxRecords: process.env.maxRecords || 3,
                 view: "Grid view"
             }).all();
 
